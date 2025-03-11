@@ -15,7 +15,7 @@ body {
   width: 200px;
   height: 200px;
   transform-style: preserve-3d;
-  transform: perspective(1000px) rotateY(0deg);
+  transform: perspective(3000px) rotateY(0deg);
   /* the 3D object is positioned 1000 pixels away from the user. the element is rotated 0 degrees around the Y-axis, which means it is not rotated at all */
   transition: transform 0.7s;
   top: -150px; /* Moves the image container up */
