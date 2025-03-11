@@ -15,11 +15,8 @@ body {
   width: 200px;
   height: 200px;
   transform-style: preserve-3d;
-  transform: perspective(3000px) rotateY(0deg);
-  /* the 3D object is positioned 1000 pixels away from the user. the element is rotated 0 degrees around the Y-axis, which means it is not rotated at all */
+  transform: perspective(1000px) rotateY(0deg);
   transition: transform 0.7s;
-  top: -150px; /* Moves the image container up */
-  /* when the "transform" property is changed, such as when an element is being rotated, scaled or translated, the change will be animated over a period of 0.7 seconds, creating a smooth and gradual transition effect. */
 }
 
 .image-container span {
@@ -27,10 +24,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  transform: rotateY(calc(var(--i) * (360deg / var(--total-images)))) translateZ(400px);
-}
-  /* This rotates the element around the Y-axis by a certain angle. The calc() function performs a mathematical calculation, and in this case, it multiplies the value of a custom property --i by 45 degrees.  */
-  /* This moves the element along the Z-axis, which is the depth axis in a 3D space */
+  transform: rotateY(calc(var(--i) * (360deg / var(--total-images)))) translateZ(var(--translateZ));
 }
 
 .image-container span img {
@@ -38,8 +32,6 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;  /* Ensure image fits inside */
-  object-fit: cover;  /* Prevents stretching */
 }
 
 .btn-container {
@@ -49,7 +41,7 @@ body {
 
 .btn {
   position: absolute;
-  bottom: -150px; /* Increase the negative value to move it further down */
+  bottom: -80px;
   background-color: darkgray;
   border: 1px solid black;
   padding: 10px 20px;
@@ -68,3 +60,4 @@ body {
 #next {
   right: 20%;
 }
+
