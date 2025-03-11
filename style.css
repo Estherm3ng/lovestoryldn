@@ -18,6 +18,7 @@ body {
   transform: perspective(1000px) rotateY(0deg);
   /* the 3D object is positioned 1000 pixels away from the user. the element is rotated 0 degrees around the Y-axis, which means it is not rotated at all */
   transition: transform 0.7s;
+  top: -30px; /* Moves the image container up */
   /* when the "transform" property is changed, such as when an element is being rotated, scaled or translated, the change will be animated over a period of 0.7 seconds, creating a smooth and gradual transition effect. */
 }
 
