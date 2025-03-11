@@ -6,33 +6,40 @@ document.addEventListener("DOMContentLoaded", function () {
     // Get total images
     const images = document.querySelectorAll(".image-container span");
     const totalImages = images.length;
-    const angle = 360 / totalImages; // Dynamic rotation angle
 
-    let x = 0; // Initial rotation
-    let timer;
+    // Calculate rotation angle dynamically
+    const angle = 360 / totalImages;
 
-    // Set total images as a CSS variable
+    // Adjust the Z distance for correct spacing
+    const imageWidth = 200; // Match .image-container width
+    const translateZ = imageWidth / (2 * Math.tan(Math.PI / totalImages)) * 2.5; // Ensures proper depth
+
+    // Apply CSS variables
     document.documentElement.style.setProperty("--total-images", totalImages);
+    document.documentElement.style.setProperty("--translateZ", `${translateZ}px`);
 
     // Assign each span an index dynamically
     images.forEach((span, index) => {
         span.style.setProperty("--i", index);
     });
 
+    let x = 0; // Initial rotation
+    let timer;
+
     prevEl.addEventListener("click", () => {
-        x += angle; // Rotate by calculated angle
+        x += angle; // Rotate based on total images
         updateGallery();
         clearTimeout(timer);
     });
 
     nextEl.addEventListener("click", () => {
-        x -= angle; // Rotate by calculated angle
+        x -= angle; // Rotate based on total images
         updateGallery();
         clearTimeout(timer);
     });
 
     function updateGallery() {
-        imageContainerEl.style.transform = `perspective(1000px) rotateY(${x}deg)`;
+        imageContainerEl.style.transform = `perspective(1000px) rotateY(${x}deg)`; // Keep original 3D effect
         timer = setTimeout(() => {
             x -= angle; // Auto-rotate
             updateGallery();
