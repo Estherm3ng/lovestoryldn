@@ -4,7 +4,7 @@ const nextEl = document.getElementById("next");
 
 const totalImages = 30; // Fixed number of images
 const angle = 360 / totalImages; // 12 degrees per image
-const translateZ = 400; // Keep the same depth as the old style
+const translateZ = 900; // Keep the same depth as the old style
 
 // Set the translateZ value in CSS
 document.documentElement.style.setProperty("--translateZ", `${translateZ}px`);
