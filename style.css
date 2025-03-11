@@ -45,7 +45,7 @@ body {
 
 .btn {
   position: absolute;
-  bottom: -80px;
+  bottom: -100px; /* Increase the negative value to move it further down */
   background-color: darkgray;
   border: 1px solid black;
   padding: 10px 20px;
