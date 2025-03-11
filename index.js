@@ -3,34 +3,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevEl = document.getElementById("prev");
     const nextEl = document.getElementById("next");
 
-    // Get all images inside .image-container
+    // Get total images
     const images = document.querySelectorAll(".image-container span");
     const totalImages = images.length;
-    const imageWidth = 200; // Should match .image-container width in CSS
+    const angle = 360 / totalImages; // Dynamic rotation angle
 
-    // Calculate translateZ dynamically for proper 3D depth
-    const translateZ = imageWidth / (2 * Math.tan(Math.PI / totalImages));
+    let x = 0; // Initial rotation
+    let timer;
 
-    // Set CSS variables for total images and depth
+    // Set total images as a CSS variable
     document.documentElement.style.setProperty("--total-images", totalImages);
-    document.documentElement.style.setProperty("--translateZ", `${translateZ}px`);
 
-    // Set each image's index dynamically
+    // Assign each span an index dynamically
     images.forEach((span, index) => {
         span.style.setProperty("--i", index);
     });
 
-    let x = 0; // Initial rotation value
-    let timer;
-
     prevEl.addEventListener("click", () => {
-        x += 360 / totalImages; // Rotate based on total images
+        x += angle; // Rotate by calculated angle
         updateGallery();
         clearTimeout(timer);
     });
 
     nextEl.addEventListener("click", () => {
-        x -= 360 / totalImages; // Rotate based on total images
+        x -= angle; // Rotate by calculated angle
         updateGallery();
         clearTimeout(timer);
     });
@@ -38,11 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateGallery() {
         imageContainerEl.style.transform = `perspective(1000px) rotateY(${x}deg)`;
         timer = setTimeout(() => {
-            x -= 360 / totalImages; // Auto-rotate
+            x -= angle; // Auto-rotate
             updateGallery();
         }, 3000);
     }
 
     updateGallery();
 });
+
 
