@@ -1,38 +1,48 @@
-const imageContainerEl = document.querySelector(".image-container");
-const prevEl = document.getElementById("prev");
-const nextEl = document.getElementById("next");
+document.addEventListener("DOMContentLoaded", function () {
+    const imageContainerEl = document.querySelector(".image-container");
+    const prevEl = document.getElementById("prev");
+    const nextEl = document.getElementById("next");
 
-// Count total images dynamically
-const totalImages = document.querySelectorAll(".image-container span").length;
+    // Get all images inside .image-container
+    const images = document.querySelectorAll(".image-container span");
+    const totalImages = images.length;
+    const imageWidth = 200; // Should match .image-container width in CSS
 
-// Calculate dynamic rotation angle
-const rotationAngle = 360 / totalImages;
+    // Calculate translateZ dynamically for proper 3D depth
+    const translateZ = imageWidth / (2 * Math.tan(Math.PI / totalImages));
 
-let x = 0;
-let timer;
+    // Set CSS variables for total images and depth
+    document.documentElement.style.setProperty("--total-images", totalImages);
+    document.documentElement.style.setProperty("--translateZ", `${translateZ}px`);
 
-prevEl.addEventListener("click", () => {
-  x = x + rotationAngle; // Rotate based on total images
-  updateGallery();
-  clearTimeout(timer);
-});
+    // Set each image's index dynamically
+    images.forEach((span, index) => {
+        span.style.setProperty("--i", index);
+    });
 
-nextEl.addEventListener("click", () => {
-  x = x - rotationAngle; // Rotate based on total images
-  updateGallery();
-  clearTimeout(timer);
-});
+    let x = 0; // Initial rotation value
+    let timer;
 
-function updateGallery() {
-  imageContainerEl.style.transform = `perspective(1000px) rotateY(${x}deg)`;
-  timer = setTimeout(() => {
-    x = x - rotationAngle; // Auto-rotate
+    prevEl.addEventListener("click", () => {
+        x += 360 / totalImages; // Rotate based on total images
+        updateGallery();
+        clearTimeout(timer);
+    });
+
+    nextEl.addEventListener("click", () => {
+        x -= 360 / totalImages; // Rotate based on total images
+        updateGallery();
+        clearTimeout(timer);
+    });
+
+    function updateGallery() {
+        imageContainerEl.style.transform = `perspective(1000px) rotateY(${x}deg)`;
+        timer = setTimeout(() => {
+            x -= 360 / totalImages; // Auto-rotate
+            updateGallery();
+        }, 3000);
+    }
+
     updateGallery();
-  }, 3000);
-}
+});
 
-// Set total images as a CSS variable
-document.documentElement.style.setProperty("--total-images", totalImages);
-
-// Run update function
-updateGallery();
