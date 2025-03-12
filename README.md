@@ -1,3 +1,3 @@
 # lovestory
 
-you can find love in every corner of the world
+finding love in every corner of the world x
