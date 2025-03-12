@@ -44,7 +44,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 120%;  /* ✅ Increase the image size */
+  height: 120%; /* ✅ Scale up proportionally */
 }
 
 /* Button container - Fixed position to avoid moving with rotation */
