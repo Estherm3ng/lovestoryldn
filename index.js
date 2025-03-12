@@ -1,31 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const bottomContainer = document.querySelector(".bottom-layer");
-    const topContainer = document.querySelector(".top-layer");
+    const bottomContainer = document.querySelector(".right-layer");
+    const topContainer = document.querySelector(".left-layer");
     const prevEl = document.getElementById("prev");
     const nextEl = document.getElementById("next");
 
     const totalImages = 10;
-    const angle = 360 / totalImages; 
+    const angle = 360 / totalImages;
 
     let x = 0;
     let timer;
 
     prevEl.addEventListener("click", () => {
-        x += angle; 
+        x += angle;
         updateGallery();
         clearTimeout(timer);
     });
 
     nextEl.addEventListener("click", () => {
-        x -= angle; 
+        x -= angle;
         updateGallery();
         clearTimeout(timer);
     });
 
     function updateGallery() {
-        bottomContainer.style.transform = `translate(-50%, -50%) perspective(2500px) rotateY(${x}deg)`;
-        topContainer.style.transform = `translate(-50%, -50%) perspective(2500px) rotateY(${-x}deg)`;
-        
+        bottomContainer.style.transform = `translate(-50%, -50%) perspective(2500px) rotateX(${x}deg)`;
+        topContainer.style.transform = `translate(-50%, -50%) perspective(2500px) rotateX(${-x}deg)`;
+
         timer = setTimeout(() => {
             x -= angle;
             updateGallery();

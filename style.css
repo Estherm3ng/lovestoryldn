@@ -21,27 +21,27 @@ body {
   transform-origin: center;
 }
 
-.bottom-layer {
+.right-layer {
   position: absolute;
-  top: calc(50% + 15vh); /* constant space below centre */
-  left: 50%;
-  transform: translate(-50%, -50%) perspective(250vw) rotateY(0deg);
+  top: 50%;
+  left: calc(100% - 30vw);
+  transform: translate(-50%, -50%) perspective(250vw) rotateX(0deg);
   transform-style: preserve-3d;
   transition: transform 0.7s;
 }
 
-.top-layer {
+.left-layer {
   position: absolute;
-  top: calc(50% - 15vh); /* constant space above centre */
-  left: 50%;
-  transform: translate(-50%, -50%) perspective(250vw) rotateY(0deg);
+  top: 50%;
+  left: 30vw;
+  transform: translate(-50%, -50%) perspective(250vw) rotateX(0deg);
   transform-style: preserve-3d;
   transition: transform 0.7s;
 }
 
 .image-container {
-  width: 12vw; 
-  height: 12vw;
+  width: 25vw;
+  height: 25vw;
 }
 
 .image-container span {
@@ -49,14 +49,14 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  transform: rotateY(calc(var(--i) * 36deg)) translateZ(50vw); 
+  transform: rotateX(calc(var(--i) * 36deg)) translateZ(50vw);
 }
 
 .image-container span img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 70%; 
+  width: 70%;
   height: auto;
 }
 
@@ -67,7 +67,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 4vw; 
+  gap: 4vw;
 }
 
 .btn {
