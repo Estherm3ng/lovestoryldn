@@ -10,7 +10,7 @@ body {
   align-items: center;
   text-align: center;
   overflow: hidden;
-  cursor: url("https://raw.githubusercontent.com/Estherm3ng/lovestoryldn/main/pic/cursor.png"), auto; /* Custom cursor */
+  cursor: url("https://raw.githubusercontent.com/Estherm3ng/lovestoryldn/main/pic/cursor.png")0 0, auto; 
 }
 
 /* Wrapper to move the whole 3D object forward */
