@@ -2,9 +2,9 @@ const imageContainerEl = document.querySelector(".image-container");
 const prevEl = document.getElementById("prev");
 const nextEl = document.getElementById("next");
 
-const totalImages = 10; // Fixed number of images
-const angle = 360 / totalImages; // 12 degrees per image
-const translateZ = 1600; // Keep the same depth as the old style
+const totalImages = 10; //  number of images
+const angle = 360 / totalImages;
+const translateZ = 1000; 
 
 // Set the translateZ value in CSS
 document.documentElement.style.setProperty("--translateZ", `${translateZ}px`);
