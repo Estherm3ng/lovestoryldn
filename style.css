@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
 body {
   margin: 0;
   display: flex;
@@ -13,35 +13,14 @@ body {
   overflow: hidden;
 }
 
-.carousel-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(clamp(0.6, 1, 1.2));
-  transform-origin: center;
-}
-
-.right-layer {
-  position: absolute;
-  top: 50%;
-  left: calc(50% + 25vw);
-  transform: translate(-50%, -50%) perspective(250vw) rotateX(0deg);
-  transform-style: preserve-3d;
-  transition: transform 0.7s;
-}
-
-.left-layer {
-  position: absolute;
-  top: 50%;
-  left: calc(50% - 25vw);
-  transform: translate(-50%, -50%) perspective(250vw) rotateX(0deg);
-  transform-style: preserve-3d;
-  transition: transform 0.7s;
-}
 
 .image-container {
-  width: 150%;
-  height: 150%;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.7s;
 }
 
 .image-container span {
@@ -49,39 +28,41 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  transform: rotateX(calc(var(--i) * 36deg)) translateZ(900vw);
+  transform: rotateY(calc(var(--i) * 18deg)) translateZ(1000px);
 }
 
 .image-container span img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 70%;
-  height: auto;
+  width: 100%;
 }
 
-/* button */
 .btn-container {
-  position: fixed;
-  bottom: 5vh;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 4vw;
+  position: relative;
+  width: 100%;
 }
 
 .btn {
-  background-color: darkgray;
-  border: 0.1vw solid black;
-  padding: clamp(0.8vw, 1vw, 1.5vw) clamp(1.5vw, 2vw, 3vw);
-  border-radius: 0.5vw;
+  position: absolute;
+  bottom: -200px;
+  background-color: rgb(234, 201, 235);
+  border: 1px solid rgb(179, 143, 174);
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: clamp(0.8rem, 1rem, 1.2rem);
-  text-transform: uppercase;
-  font-weight: bold;
+  font-family: 'Pixelify Sans', sans-serif; 
+  font-size: 16px;
 }
 
 .btn:hover {
   filter: brightness(1.5);
 }
 
+#prev {
+  left: 20%;
+}
+
+#next {
+  right: 20%;
+}
