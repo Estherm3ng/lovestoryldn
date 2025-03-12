@@ -51,19 +51,30 @@ body {
 }
 
 .btn-container {
-  position: relative;
+  position: fixed;
   width: 80%;
 }
 
+/* Button container - Keeps buttons positioned below the scene */
+.btn-container {
+  position: relative; /* ✅ Keeps them in normal document flow */
+  width: 100%;
+  text-align: center; /* ✅ Centers buttons horizontally */
+  margin-top: 80px; /* ✅ Moves buttons below the gallery */
+}
+
+/* Button styling (keeps same bottom positioning as before) */
 .btn {
   position: absolute;
-  bottom: -80px;
+  bottom: -80px; /* ✅ Keeps buttons in the same position */
   background-color: darkgray;
   border: 1px solid black;
   padding: 10px 20px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
+/* Button hover effect */
 .btn:hover {
   filter: brightness(1.5);
 }
