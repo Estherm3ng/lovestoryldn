@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
+<script>
     const rightContainer = document.querySelector(".right-layer");
     const leftContainer = document.querySelector(".left-layer");
     const prevEl = document.getElementById("prev");
     const nextEl = document.getElementById("next");
 
-    const totalImages = 10;
+    const totalImages = 20;
     const angle = 360 / totalImages;
 
     let x = 0;
@@ -33,5 +33,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     updateGallery();
-});
+</script>
 
