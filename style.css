@@ -1,4 +1,4 @@
-/* Body styles */
+
 body {
   margin: 0;
   display: flex;
@@ -13,13 +13,13 @@ body {
   cursor: url("https://raw.githubusercontent.com/Estherm3ng/lovestoryldn/main/pic/cursor.png")0 0, auto; 
 }
 
-/* Wrapper to move the whole 3D object forward */
+
 .scene {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  transform: translateZ(8000px); /* Moves everything forward */
+  transform: translateZ(8000px); /* moves everything forward */
 }
 
 
@@ -28,8 +28,7 @@ body {
   width: 200px;
   height: 200px;
   transform-style: preserve-3d;
-  transform: perspective(10px)rotateY(0deg); 
-  /* Moves the whole object forward */
+  transform: perspective(50px)rotateY(0deg); 
   transition: transform 0.7s;
 }
 
@@ -39,8 +38,6 @@ body {
   left: 0;
   width: 100%;
   transform: rotateY(calc(var(--i) * 12deg)) translateZ(var(--translateZ));
-  /* This rotates the element around the Y-axis by a certain angle. The calc() function performs a mathematical calculation, and in this case, it multiplies the value of a custom property --i by 45 degrees.  */
-  /* This moves the element along the Z-axis, which is the depth axis in a 3D space */
 }
 
 .image-container span img {
@@ -50,23 +47,22 @@ body {
   width: 100%;
 }
 
+/* Button  */
 .btn-container {
   position: fixed;
   width: 80%;
 }
 
-/* Button container - Keeps buttons positioned below the scene */
 .btn-container {
-  position: relative; /* ✅ Keeps them in normal document flow */
+  position: relative; 
   width: 100%;
-  text-align: center; /* ✅ Centers buttons horizontally */
-  margin-top: 20px; /* ✅ Moves buttons below the gallery */
+  text-align: center; 
+  margin-top: 20px; 
 }
 
-/* Button styling (keeps same bottom positioning as before) */
 .btn {
   position: absolute;
-  bottom: 10px; /* ✅ Keeps buttons in the same position */
+  bottom: 10px; 
   background-color: darkgray;
   border: 1px solid black;
   padding: 10px 20px;
@@ -74,7 +70,6 @@ body {
   cursor: pointer;
 }
 
-/* Button hover effect */
 .btn:hover {
   filter: brightness(1.5);
 }
