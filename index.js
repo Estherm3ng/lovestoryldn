@@ -1,37 +1,33 @@
-<script>
-    const rightContainer = document.querySelector(".right-layer");
-    const leftContainer = document.querySelector(".left-layer");
+document.addEventListener("DOMContentLoaded", function () {
+    const imageContainerEl = document.querySelector(".image-container");
     const prevEl = document.getElementById("prev");
     const nextEl = document.getElementById("next");
 
     const totalImages = 20;
-    const angle = 360 / totalImages;
+    const angle = 360 / totalImages; // 18° per image
 
     let x = 0;
     let timer;
 
     prevEl.addEventListener("click", () => {
-        x += angle;
+        x += angle; // Rotate by 18°
         updateGallery();
         clearTimeout(timer);
     });
 
     nextEl.addEventListener("click", () => {
-        x -= angle;
+        x -= angle; // Rotate by 18°
         updateGallery();
         clearTimeout(timer);
     });
 
     function updateGallery() {
-        rightContainer.style.transform = `translate(-50%, -50%) perspective(2500px) rotateX(${x}deg)`;
-        leftContainer.style.transform = `translate(-50%, -50%) perspective(2500px) rotateX(${-x}deg)`;
-
+        imageContainerEl.style.transform = ` perspective(1500px) rotateY(${x}deg)`;
         timer = setTimeout(() => {
-            x -= angle;
+            x -= angle; // Auto-rotate every 3 seconds
             updateGallery();
         }, 3000);
     }
 
     updateGallery();
-</script>
-
+});
