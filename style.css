@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  transform: translateZ(1500px); /* Moves everything forward */
+  transform: translateZ(3000px); /* Moves everything forward */
 }
 
 
@@ -66,7 +66,7 @@ body {
 /* Button styling (keeps same bottom positioning as before) */
 .btn {
   position: absolute;
-  bottom: -80px; /* ✅ Keeps buttons in the same position */
+  bottom: -20px; /* ✅ Keeps buttons in the same position */
   background-color: darkgray;
   border: 1px solid black;
   padding: 10px 20px;
