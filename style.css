@@ -12,58 +12,47 @@ body {
   cursor: url("https://raw.githubusercontent.com/Estherm3ng/lovestoryldn/main/pic/cursor.png") 0 0, auto;
 }
 
-/* Scene - Moves the whole 3D object forward */
-.scene {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  transform: translateZ(0px); /* ✅ Reduced from 8000px */
-}
-
-/* Image container */
 .image-container {
   position: relative;
   width: 200px;
   height: 200px;
   transform-style: preserve-3d;
-  transform: perspective(2500px) rotateY(0deg); /* ✅ Fixed perspective */
+  transform: perspective(1000px) rotateY(0deg);
+  /* the 3D object is positioned 1000 pixels away from the user. the element is rotated 0 degrees around the Y-axis, which means it is not rotated at all */
   transition: transform 0.7s;
+  /* when the "transform" property is changed, such as when an element is being rotated, scaled or translated, the change will be animated over a period of 0.7 seconds, creating a smooth and gradual transition effect. */
 }
 
-/* Image positioning */
 .image-container span {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  transform: rotateY(calc(var(--i) * 12deg)) translateZ(var(--translateZ));
+  transform: rotateY(calc(var(--i) * 36deg)) translateZ(400px);
+  /* This rotates the element around the Y-axis by a certain angle. The calc() function performs a mathematical calculation, and in this case, it multiplies the value of a custom property --i by 45 degrees.  */
+  /* This moves the element along the Z-axis, which is the depth axis in a 3D space */
 }
 
 .image-container span img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 120%;  /* ✅ Increase the image size */
-  height: 120%; /* ✅ Scale up proportionally */
+  width: 100%;
 }
 
-/* Button container - Fixed position to avoid moving with rotation */
 .btn-container {
   position: relative;
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
+  width: 80%;
 }
 
-/* Button styling */
 .btn {
   position: absolute;
-  bottom: 20px; /* ✅ Adjusted for better visibility */
+  bottom: -80px;
   background-color: darkgray;
   border: 1px solid black;
   padding: 10px 20px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -71,10 +60,9 @@ body {
 }
 
 #prev {
-  left: 30%;
+  left: 20%;
 }
 
 #next {
-  right: 30%;
+  right: 20%;
 }
-
