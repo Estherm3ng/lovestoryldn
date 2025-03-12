@@ -30,7 +30,6 @@ body {
   transform-style: preserve-3d;
   transform: perspective(10px)rotateY(0deg); 
   /* Moves the whole object forward */
-}
   transition: transform 0.7s;
 }
 
