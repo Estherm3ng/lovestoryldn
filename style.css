@@ -60,7 +60,7 @@ body {
   position: relative; /* ✅ Keeps them in normal document flow */
   width: 100%;
   text-align: center; /* ✅ Centers buttons horizontally */
-  margin-top: 80px; /* ✅ Moves buttons below the gallery */
+  margin-top: 40px; /* ✅ Moves buttons below the gallery */
 }
 
 /* Button styling (keeps same bottom positioning as before) */
