@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextEl = document.getElementById("next");
 
     const totalImages = 10;
-    const angle = 360 / totalImages; // 36 degrees per image
+    const angle = 360 / totalImages; 
 
     let x = 0;
     let timer;
