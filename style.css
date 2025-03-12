@@ -15,7 +15,7 @@ body {
 /* Bottom Layer - Positioned Lower */
 .bottom-layer {
   position: absolute;
-  top: 55%; /* ✅ Moved lower to prevent overlap */
+  top: 65%; /* ✅ Moved lower */
   left: 50%;
   transform: translate(-50%, -50%) perspective(2500px) rotateY(0deg);
   transform-style: preserve-3d;
@@ -25,7 +25,7 @@ body {
 /* Top Layer - Positioned Higher */
 .top-layer {
   position: absolute;
-  top: 30%; /* ✅ Moved higher for better separation */
+  top: 20%; /* ✅ Moved higher to reduce overlap */
   left: 50%;
   transform: translate(-50%, -50%) perspective(2500px) rotateY(0deg);
   transform-style: preserve-3d;
@@ -34,8 +34,8 @@ body {
 
 /* Image container size */
 .image-container {
-  width: 200px;
-  height: 200px;
+  width: 170px; /* ✅ Slightly reduced */
+  height: 170px; /* ✅ Slightly reduced */
 }
 
 /* Rotation and Positioning */
@@ -44,40 +44,40 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  transform: rotateY(calc(var(--i) * 36deg)) translateZ(600px); /* ✅ Keeps correct spacing */
+  transform: rotateY(calc(var(--i) * 36deg)) translateZ(700px); /* ✅ Increased spacing */
 }
 
-/* Image Styling */
+/* Image Styling - Slightly Smaller */
 .image-container span img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 85%; /* ✅ Reduced from 100% to 85% */
+  height: auto;
 }
 
+/* Button Container - Ensures Even Spacing from the Center */
 .btn-container {
-  position: relative;
-  width: 80%;
+  position: fixed;
+  bottom: 50px; /* ✅ Moves buttons up slightly */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 60px; /* ✅ Even spacing between buttons */
 }
 
+/* Button Styling */
 .btn {
-  position: absolute;
-  bottom: -80px;
   background-color: darkgray;
   border: 1px solid black;
-  padding: 10px 20px;
+  padding: 12px 24px; /* ✅ Adjusted for balance */
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .btn:hover {
   filter: brightness(1.5);
-}
-
-#prev {
-  left: 20%;
-}
-
-#next {
-  right: 20%;
 }
