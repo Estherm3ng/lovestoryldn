@@ -15,7 +15,7 @@ body {
 /* Bottom Layer - Positioned Lower */
 .bottom-layer {
   position: absolute;
-  top: 50%;
+  top: 55%; /* ✅ Moved lower to prevent overlap */
   left: 50%;
   transform: translate(-50%, -50%) perspective(2500px) rotateY(0deg);
   transform-style: preserve-3d;
@@ -25,7 +25,7 @@ body {
 /* Top Layer - Positioned Higher */
 .top-layer {
   position: absolute;
-  top: 35%; /* Moves it higher */
+  top: 30%; /* ✅ Moved higher for better separation */
   left: 50%;
   transform: translate(-50%, -50%) perspective(2500px) rotateY(0deg);
   transform-style: preserve-3d;
@@ -44,7 +44,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  transform: rotateY(calc(var(--i) * 36deg)) translateZ(600px); /* Correct spacing */
+  transform: rotateY(calc(var(--i) * 36deg)) translateZ(600px); /* ✅ Keeps correct spacing */
 }
 
 /* Image Styling */
@@ -55,18 +55,19 @@ body {
   width: 100%;
 }
 
-/* Button container */
+/* Button container - Keeps buttons centered and visible */
 .btn-container {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
+  position: fixed;
+  bottom: 40px; /* ✅ Keeps it at the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  display: flex;
+  gap: 20px; /* ✅ Keeps buttons closer together */
 }
 
 /* Button styling */
 .btn {
-  position: absolute;
-  bottom: 40px; /* Adjusted for better visibility */
   background-color: darkgray;
   border: 1px solid black;
   padding: 10px 20px;
