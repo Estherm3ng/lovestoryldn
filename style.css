@@ -24,7 +24,7 @@ body {
 .right-layer {
   position: absolute;
   top: 50%;
-  left: calc(50% + 30vw);
+  left: calc(50% + 25vw);
   transform: translate(-50%, -50%) perspective(250vw) rotateX(0deg);
   transform-style: preserve-3d;
   transition: transform 0.7s;
@@ -33,7 +33,7 @@ body {
 .left-layer {
   position: absolute;
   top: 50%;
-  left: 30vw;
+  left: calc(50% - 25vw);
   transform: translate(-50%, -50%) perspective(250vw) rotateX(0deg);
   transform-style: preserve-3d;
   transition: transform 0.7s;
