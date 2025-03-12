@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  transform: translateZ(3000px); /* Moves everything forward */
+  transform: translateZ(5000px); /* Moves everything forward */
 }
 
 
