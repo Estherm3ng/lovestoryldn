@@ -55,19 +55,14 @@ body {
   width: 100%;
 }
 
-/* Button container - Keeps buttons centered and visible */
 .btn-container {
-  position: fixed;
-  bottom: 40px; /* ✅ Keeps it at the bottom */
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto;
-  display: flex;
-  gap: 20px; /* ✅ Keeps buttons closer together */
+  position: relative;
+  width: 80%;
 }
 
-/* Button styling */
 .btn {
+  position: absolute;
+  bottom: -80px;
   background-color: darkgray;
   border: 1px solid black;
   padding: 10px 20px;
@@ -77,4 +72,12 @@ body {
 
 .btn:hover {
   filter: brightness(1.5);
+}
+
+#prev {
+  left: 20%;
+}
+
+#next {
+  right: 20%;
 }
