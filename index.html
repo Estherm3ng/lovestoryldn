@@ -1,33 +1,43 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const Container = document.querySelector(".image-container");
-    const prevEl = document.getElementById("prev");
-    const nextEl = document.getElementById("next");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lovestoryldn</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="image-container">
+        <span style="--i: 1"><img src="pic/IMG_2280 2.jpg"></span>
+        <span style="--i: 2"><img src="pic/IMG_2281 2.jpg"></span>
+        <span style="--i: 3"><img src="pic/IMG_2282 2.jpg"></span>
+        <span style="--i: 4"><img src="pic/IMG_2283 2.jpg"></span>
+        <span style="--i: 5"><img src="pic/IMG_2284 2.jpg"></span>
+        <span style="--i: 6"><img src="pic/IMG_2285 2.jpg"></span>
+        <span style="--i: 7"><img src="pic/IMG_2286 2.jpg"></span>
+        <span style="--i: 8"><img src="pic/IMG_2287 2.jpg"></span>
+        <span style="--i: 9"><img src="pic/IMG_2288 2.jpg"></span>
+        <span style="--i: 10"><img src="pic/IMG_2289 2.jpg"></span>
+        <span style="--i: 11"><img src="pic/IMG_2290 2.jpg"></span>
+        <span style="--i: 12"><img src="pic/IMG_2291 2.jpg"></span>
+        <span style="--i: 13"><img src="pic/IMG_2292 2.jpg"></span>
+        <span style="--i: 14"><img src="pic/IMG_2293 2.jpg"></span>
+        <span style="--i: 15"><img src="pic/IMG_2294 2.jpg"></span>
+        <span style="--i: 16"><img src="pic/IMG_2295 2.jpg"></span>
+        <span style="--i: 17"><img src="pic/IMG_2296 2.jpg"></span>
+        <span style="--i: 18"><img src="pic/IMG_2297 2.jpg"></span>
+        <span style="--i: 19"><img src="pic/IMG_2298 2.jpg"></span>
+        <span style="--i: 20"><img src="pic/IMG_2299 2.jpg"></span>
+    </div>
+    <div class="btn-container">
+         <button class="btn" id="prev">Prev</button> <!-- shortcut to write button.btn#prev{Prev} -->
+         <button class="btn" id="next">Next</button>
+    </div>
+    <script src="index.js" defer></script>
+</body>
+</html>
 
-    const totalImages = 20;
-    const angle = 360 / totalImages; // 18° per image
-
-    let x = 0;
-    let timer;
-
-    prevEl.addEventListener("click", () => {
-        x += angle; // Rotate by 18°
-        updateGallery();
-        clearTimeout(timer);
-    });
-
-    nextEl.addEventListener("click", () => {
-        x -= angle; // Rotate by 18°
-        updateGallery();
-        clearTimeout(timer);
-    });
-
-    function updateGallery() {
-        Container.style.transform = ` perspective(1500px) rotateY(${x}deg)`;
-        timer = setTimeout(() => {
-            x -= angle; // Auto-rotate every 3 seconds
-            updateGallery();
-        }, 3000);
-    }
 
     updateGallery();
 });
