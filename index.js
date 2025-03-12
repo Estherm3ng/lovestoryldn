@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const bottomContainer = document.querySelector(".right-layer");
-    const topContainer = document.querySelector(".left-layer");
+    const rightContainer = document.querySelector(".right-layer");
+    const leftContainer = document.querySelector(".left-layer");
     const prevEl = document.getElementById("prev");
     const nextEl = document.getElementById("next");
 
@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function updateGallery() {
-        bottomContainer.style.transform = `translate(-50%, -50%) perspective(2500px) rotateX(${x}deg)`;
-        topContainer.style.transform = `translate(-50%, -50%) perspective(2500px) rotateX(${-x}deg)`;
+        rightContainer.style.transform = `translate(-50%, -50%) perspective(2500px) rotateX(${x}deg)`;
+        leftContainer.style.transform = `translate(-50%, -50%) perspective(2500px) rotateX(${-x}deg)`;
 
         timer = setTimeout(() => {
             x -= angle;

@@ -24,7 +24,7 @@ body {
 .right-layer {
   position: absolute;
   top: 50%;
-  left: calc(100% - 30vw);
+  left: calc(50% + 30vw);
   transform: translate(-50%, -50%) perspective(250vw) rotateX(0deg);
   transform-style: preserve-3d;
   transition: transform 0.7s;
@@ -40,8 +40,8 @@ body {
 }
 
 .image-container {
-  width: 25vw;
-  height: 25vw;
+  width: 150%;
+  height: 150%;
 }
 
 .image-container span {
@@ -49,7 +49,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  transform: rotateX(calc(var(--i) * 36deg)) translateZ(50vw);
+  transform: rotateX(calc(var(--i) * 36deg)) translateZ(900vw);
 }
 
 .image-container span img {
