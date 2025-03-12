@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  transform: translateZ(5000px); /* Moves everything forward */
+  transform: translateZ(8000px); /* Moves everything forward */
 }
 
 
@@ -60,13 +60,13 @@ body {
   position: relative; /* ✅ Keeps them in normal document flow */
   width: 100%;
   text-align: center; /* ✅ Centers buttons horizontally */
-  margin-top: 40px; /* ✅ Moves buttons below the gallery */
+  margin-top: 20px; /* ✅ Moves buttons below the gallery */
 }
 
 /* Button styling (keeps same bottom positioning as before) */
 .btn {
   position: absolute;
-  bottom: -20px; /* ✅ Keeps buttons in the same position */
+  bottom: 10px; /* ✅ Keeps buttons in the same position */
   background-color: darkgray;
   border: 1px solid black;
   padding: 10px 20px;
