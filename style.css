@@ -34,11 +34,12 @@ body {
   transition: transform 0.7s;
 }
 
-/* Image container size - Scales with viewport */
+/* Image container size - Slightly increased */
 .image-container {
-  width: clamp(12vw, 15vw, 20vw); /* ✅ Scales between 12vw - 20vw */
-  height: clamp(12vw, 15vw, 20vw); /* ✅ Scales proportionally */
+  width: clamp(14vw, 18vw, 22vw); /* 🔼 Increased from (12vw, 15vw, 20vw) */
+  height: clamp(14vw, 18vw, 22vw); /* 🔼 Keep proportional */
 }
+
 
 /* Rotation and Positioning - Scales with viewport */
 .image-container span {
