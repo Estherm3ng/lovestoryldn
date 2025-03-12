@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   display: flex;
@@ -10,28 +9,29 @@ body {
   align-items: center;
   text-align: center;
   overflow: hidden;
-  cursor: url("https://raw.githubusercontent.com/Estherm3ng/lovestoryldn/main/pic/cursor.png")0 0, auto; 
+  cursor: url("https://raw.githubusercontent.com/Estherm3ng/lovestoryldn/main/pic/cursor.png") 0 0, auto;
 }
 
-
+/* Scene - Moves the whole 3D object forward */
 .scene {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  transform: translateZ(8000px); /* moves everything forward */
+  transform: translateZ(1200px); /* ✅ Reduced from 8000px */
 }
 
-
+/* Image container */
 .image-container {
   position: relative;
   width: 200px;
   height: 200px;
   transform-style: preserve-3d;
-  transform: perspective(50px)rotateY(0deg); 
+  transform: perspective(2500px) rotateY(0deg); /* ✅ Fixed perspective */
   transition: transform 0.7s;
 }
 
+/* Image positioning */
 .image-container span {
   position: absolute;
   top: 0;
@@ -47,22 +47,18 @@ body {
   width: 100%;
 }
 
-/* Button  */
+/* Button container - Fixed position to avoid moving with rotation */
 .btn-container {
-  position: fixed;
-  width: 80%;
-}
-
-.btn-container {
-  position: relative; 
+  position: relative;
   width: 100%;
-  text-align: center; 
-  margin-top: 20px; 
+  text-align: center;
+  margin-top: 20px;
 }
 
+/* Button styling */
 .btn {
   position: absolute;
-  bottom: 10px; 
+  bottom: 20px; /* ✅ Adjusted for better visibility */
   background-color: darkgray;
   border: 1px solid black;
   padding: 10px 20px;
@@ -81,5 +77,4 @@ body {
 #next {
   right: 20%;
 }
-
 
