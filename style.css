@@ -34,8 +34,8 @@ body {
 
 /* Image container size */
 .image-container {
-  width: 170px; /* ✅ Slightly reduced */
-  height: 170px; /* ✅ Slightly reduced */
+  width: 175px; /* ✅ Slightly reduced */
+  height: 175px; /* ✅ Slightly reduced */
 }
 
 /* Rotation and Positioning */
