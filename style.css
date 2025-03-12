@@ -1,4 +1,3 @@
-/* Base Styles */
 body {
   margin: 0;
   display: flex;
@@ -14,12 +13,21 @@ body {
   cursor: url("https://raw.githubusercontent.com/Estherm3ng/lovestoryldn/main/pic/cursor.png") 0 0, auto;
 }
 
+/* Wrapper for the whole carousel - scales everything together */
+.carousel-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(clamp(0.6, 1, 1.2)); /* ✅ Scales everything proportionally */
+  transform-origin: center;
+}
+
 /* Bottom Layer - Positioned Lower */
 .bottom-layer {
   position: absolute;
-  top: 65vh; /* ✅ Now scales with window height */
+  top: 65%;
   left: 50%;
-  transform: translate(-50%, -50%) perspective(250vh) rotateY(0deg);
+  transform: translate(-50%, -50%) perspective(250vw) rotateY(0deg);
   transform-style: preserve-3d;
   transition: transform 0.7s;
 }
@@ -27,56 +35,55 @@ body {
 /* Top Layer - Positioned Higher */
 .top-layer {
   position: absolute;
-  top: 20vh; /* ✅ Now scales with window height */
+  top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%) perspective(250vh) rotateY(0deg);
+  transform: translate(-50%, -50%) perspective(250vw) rotateY(0deg);
   transform-style: preserve-3d;
   transition: transform 0.7s;
 }
 
-/* Image container size - Slightly increased */
+/* Image container - Now scales proportionally as a whole */
 .image-container {
-  width: clamp(13vw, 15vw, 20vw); /* 🔼 Increased from (12vw, 15vw, 20vw) */
-  height: clamp(12vw, 15vw, 20vw); /* 🔼 Keep proportional */
+  width: 15vw; /* ✅ Keeps a consistent size relative to viewport */
+  height: 15vw;
 }
 
-
-/* Rotation and Positioning - Scales with viewport */
+/* Rotation and Positioning */
 .image-container span {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  transform: rotateY(calc(var(--i) * 36deg)) translateZ(clamp(40vw, 50vw, 60vw)); /* ✅ Scales dynamically */
+  transform: rotateY(calc(var(--i) * 36deg)) translateZ(50vw); /* ✅ Scales proportionally */
 }
 
-/* Image Styling - Keeps images proportional */
+/* Image Styling */
 .image-container span img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 85%; /* ✅ Reduced to prevent overlap */
+  width: 100%;
   height: auto;
 }
 
-/* Button Container - Ensures Buttons Scale & Stay Centered */
+/* Button Container - Stays centered and scales proportionally */
 .btn-container {
   position: fixed;
-  bottom: 5vh; /* ✅ Moves buttons up slightly and scales */
+  bottom: 5vh; /* ✅ Scales with viewport height */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: clamp(3vw, 5vw, 7vw); /* ✅ Keeps spacing dynamic */
+  gap: 5vw; /* ✅ Adjusts spacing proportionally */
 }
 
-/* Button Styling - Scales with viewport */
+/* Button Styling */
 .btn {
   background-color: darkgray;
   border: 0.1vw solid black;
-  padding: clamp(0.8vw, 1vw, 1.5vw) clamp(1.5vw, 2vw, 3vw); /* ✅ Responsive padding */
+  padding: clamp(0.8vw, 1vw, 1.5vw) clamp(1.5vw, 2vw, 3vw);
   border-radius: 0.5vw;
   cursor: pointer;
-  font-size: clamp(0.8rem, 1rem, 1.2rem); /* ✅ Responsive text */
+  font-size: clamp(0.8rem, 1rem, 1.2rem);
   text-transform: uppercase;
   font-weight: bold;
 }
