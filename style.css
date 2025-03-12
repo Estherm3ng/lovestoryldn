@@ -23,20 +23,20 @@ body {
   transform-origin: center;
 }
 
-/* Bottom Layer - Positioned Lower */
+/* Bottom Layer - Positioned Constantly Below */
 .bottom-layer {
   position: absolute;
-  top: 75%; /* ✅ Moved slightly lower */
+  top: calc(50% + 15vh); /* ✅ Keeps constant space below center */
   left: 50%;
   transform: translate(-50%, -50%) perspective(250vw) rotateY(0deg);
   transform-style: preserve-3d;
   transition: transform 0.7s;
 }
 
-/* Top Layer - Positioned Higher */
+/* Top Layer - Positioned Constantly Above */
 .top-layer {
   position: absolute;
-  top: 20%; /* ✅ Moved higher to further separate */
+  top: calc(50% - 15vh); /* ✅ Keeps constant space above center */
   left: 50%;
   transform: translate(-50%, -50%) perspective(250vw) rotateY(0deg);
   transform-style: preserve-3d;
@@ -45,8 +45,8 @@ body {
 
 /* Image container - Adjusted size */
 .image-container {
-  width: 11vw; /* ✅ Slightly reduced */
-  height: 11vw;
+  width: 10vw; /* ✅ Slightly reduced */
+  height: 10vw;
 }
 
 /* Rotation and Positioning - Push images further apart */
@@ -92,3 +92,4 @@ body {
 .btn:hover {
   filter: brightness(1.5);
 }
+
