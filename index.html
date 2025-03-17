@@ -35,6 +35,32 @@
          <button class="btn" id="next">Next</button>
     </div>
     <script src="index.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const floatingImage = document.createElement("div");
+          floatingImage.classList.add("floating-image");
+          document.body.appendChild(floatingImage);
+          
+          function makeNewPosition() {
+              var h = window.innerHeight - 50;
+              var w = window.innerWidth - 50;
+              var nh = Math.floor(Math.random() * h);
+              var nw = Math.floor(Math.random() * w);
+              return [nh, nw];    
+          }
+          
+          function animateDiv() {
+              var newq = makeNewPosition();
+              var speed = 5000;
+              floatingImage.style.transition = `top ${speed}ms linear, left ${speed}ms linear`;
+              floatingImage.style.top = `${newq[0]}px`;
+              floatingImage.style.left = `${newq[1]}px`;
+              setTimeout(animateDiv, speed);
+          }
+          
+          animateDiv();
+        });
+      </script>
 </body>
 </html>
 
