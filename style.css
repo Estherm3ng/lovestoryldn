@@ -71,7 +71,7 @@ body {
   position: absolute;
   width:150px;
   height: 150px;
-  background: url("pic/candy.gif") no-repeat center center;
+  background: url("pic/heart.png");
   background-size: contain;
   pointer-events: none;
 }

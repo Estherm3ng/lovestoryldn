@@ -51,7 +51,7 @@
           
           function animateDiv() {
               var newq = makeNewPosition();
-              var speed = 5000;
+              var speed = 3000;
               floatingImage.style.transition = `top ${speed}ms linear, left ${speed}ms linear`;
               floatingImage.style.top = `${newq[0]}px`;
               floatingImage.style.left = `${newq[1]}px`;
@@ -66,4 +66,4 @@
 
 
     updateGallery();
-});
+};
