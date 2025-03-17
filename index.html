@@ -37,30 +37,47 @@
     <script src="index.js" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const floatingImage = document.createElement("div");
-          floatingImage.classList.add("floating-image");
-          document.body.appendChild(floatingImage);
-          
-          function makeNewPosition() {
-              var h = window.innerHeight - 50;
-              var w = window.innerWidth - 50;
-              var nh = Math.floor(Math.random() * h);
-              var nw = Math.floor(Math.random() * w);
-              return [nh, nw];    
-          }
-          
-          function animateDiv() {
-              var newq = makeNewPosition();
-              var speed = 3000;
-              floatingImage.style.transition = `top ${speed}ms linear, left ${speed}ms linear`;
-              floatingImage.style.top = `${newq[0]}px`;
-              floatingImage.style.left = `${newq[1]}px`;
-              setTimeout(animateDiv, speed);
-          }
-          
-          animateDiv();
+            const floatingImage = document.createElement("div");
+            floatingImage.classList.add("floating-image");
+            document.body.appendChild(floatingImage);
+
+            function makeNewPosition() {
+                var h = window.innerHeight - 50;
+                var w = window.innerWidth - 50;
+                var nh = Math.floor(Math.random() * h);
+                var nw = Math.floor(Math.random() * w);
+                return [nh, nw];    
+            }
+
+            function calcSpeed(prev, next) {
+                var x = Math.abs(prev[1] - next[1]);
+                var y = Math.abs(prev[0] - next[0]);
+                var distance = Math.sqrt(x * x + y * y);
+                var speedModifier = 0.2; // Adjust for speed control
+                return Math.ceil(distance / speedModifier);
+            }
+
+            function animateDiv() {
+                var newq = makeNewPosition();
+                var oldq = floatingImage.getBoundingClientRect();
+                var speed = calcSpeed([oldq.top, oldq.left], newq);
+                
+                floatingImage.style.transition = `top ${speed}ms linear, left ${speed}ms linear`;
+                floatingImage.style.position = "absolute";
+                floatingImage.style.top = `${newq[0]}px`;
+                floatingImage.style.left = `${newq[1]}px`;
+                floatingImage.style.width = "100px";
+                floatingImage.style.height = "100px";
+                floatingImage.style.background = "url('pic/heart.png') no-repeat center center";
+                floatingImage.style.backgroundSize = "contain";
+                floatingImage.style.pointerEvents = "none";
+
+                setTimeout(animateDiv, speed);
+            }
+
+            animateDiv();
         });
-      </script>
+    </script>
 </body>
 </html>
 
