@@ -66,26 +66,3 @@ body {
 #next {
   right: 20%;
 }
-
-.floating-image {
-  position: absolute;
-  width:150px;
-  height: 150px;
-  background: url("pic/heart.png");
-  background-size: contain;
-  pointer-events: none;
-
-}
-
-.floating-text {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.7); /* Dark background */
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  white-space: nowrap;
-  pointer-events: none; /* Prevents interaction */
-  opacity: 0; /* Hidden by default */
-  transition: opacity 0.3s ease-in-out;
-}
