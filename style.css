@@ -66,3 +66,35 @@ body {
 #next {
   right: 20%;
 }
+
+
+
+@media screen and (max-width: 768px) and (pointer: coarse) {
+  
+  body {
+    background-size: cover;
+  }
+
+
+  /* ✅ Reduce Image Size */
+  .image-container {
+    width: 14vw;
+    height: 14vw;
+  }
+
+  /* ✅ Reduce Z-Depth for Mobile */
+  .image-container span {
+    transform: rotateY(calc(var(--i) * 36deg)) translateZ(45vw);
+  }
+
+  /* remove buttoms for swipe */
+  .btn-container {
+    display: none;
+  }
+
+
+  /* ✅ Hide Cursor on Touch Devices */
+  body {
+    cursor: default;
+  }
+}
