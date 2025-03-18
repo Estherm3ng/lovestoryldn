@@ -24,10 +24,6 @@ nextEl.addEventListener("click", () => {
 // ✅ Function to Update Rotation
 function updateGallery() {
     imageContainerEl.style.transform = `perspective(1500px) rotateY(${x}deg)`;
-    timer = setTimeout(() => {
-        x -= angle;
-        updateGallery();
-    }, 3000);
 }
 
 // ✅ Swipe Gesture for Mobile

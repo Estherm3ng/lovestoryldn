@@ -78,14 +78,10 @@ body {
 
   /* ✅ Reduce Image Size */
   .image-container {
-    width: 14vw;
-    height: 14vw;
+    width: 200px;
+    height: 200px;
   }
 
-  /* ✅ Reduce Z-Depth for Mobile */
-  .image-container span {
-    transform: rotateY(calc(var(--i) * 36deg)) translateZ(45vw);
-  }
 
   /* remove buttoms for swipe */
   .btn-container {
