@@ -74,22 +74,25 @@ body {
   body {
     background-size: cover;
   }
+  
 
 
-  /* ✅ Reduce Image Size */
   .image-container {
-    width: 200px;
-    height: 200px;
+    position: relative;
+    width: 100px;
+    height: 100px;
   }
 
+  .image-container span {
+    transform: rotateY(calc(var(--i) * 18deg)) translateZ(1000px);
+  }
 
-  /* remove buttoms for swipe */
+ 
   .btn-container {
     display: none;
   }
+  
 
-
-  /* ✅ Hide Cursor on Touch Devices */
   body {
     cursor: default;
   }
