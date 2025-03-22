@@ -10,7 +10,7 @@ let timer;
 
 // ✅ Button Click Event (Desktop)
 prevEl.addEventListener("click", () => {
-   x += angle; 
+   x += angle;
    updateGallery();
    clearTimeout(timer);
 });
@@ -56,3 +56,5 @@ function handleSwipe() {
 }
 
 updateGallery();
+
+audioElement.play();
