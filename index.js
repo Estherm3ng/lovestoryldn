@@ -55,6 +55,4 @@ function handleSwipe() {
     }
 }
 
-audioElement.play();
-
 updateGallery();
