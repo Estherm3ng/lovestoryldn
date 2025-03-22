@@ -5,7 +5,6 @@ const nextEl = document.getElementById("next");
 const totalImages = 20;
 const angle = 360 / totalImages; // 18° per image
 
-const audioElement = new audio ("pic/Lovesmenot.mps");
 
 let x = 0;
 let timer;
