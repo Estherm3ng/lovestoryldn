@@ -3,7 +3,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background: url("https://raw.githubusercontent.com/Estherm3ng/lovestoryldn/main/pic/01.jpeg") no-repeat center center fixed;
+  background: url("../asset/01.jpeg") no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -50,7 +50,7 @@ body {
   border: 1px solid rgb(179, 143, 174);
   padding: 10px 20px;
   border-radius: 5px;
-  font-family: 'Pixelify Sans', sans-serif; 
+  font-family: 'Pixelify Sans', sans-serif;
   font-size: 16px;
 }
 
@@ -69,13 +69,13 @@ body {
 
 
 @media screen and (max-width: 768px) and (pointer: coarse) {
-  
+
   body {
     background-size: cover;
     justify-content: center;  /* ✅ Centers horizontally */
     align-items: center;  /* ✅ Centers vertically */
   }
-  
+
 
   .image-container {
     position: relative;
@@ -87,11 +87,11 @@ body {
     transform: rotateY(calc(var(--i) * 18deg)) translateZ(1000px);
   }
 
- 
+
   .btn-container {
     display: none;
   }
-  
+
 
   body {
     cursor: default;
